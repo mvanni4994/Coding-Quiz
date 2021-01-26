@@ -37,30 +37,35 @@ var questionFive = {
     answer: "Displays an output on the console"
 }
 
-function timeDisplayer() {
-    timer.textcontent = "Time Left:" + time + "seconds.";
-    if (time < 0) {
-        clearInterval(interval);
-        alert("You're out of time!")
-        gameOver();
-    }
-}
+// function timeDisplayer() {
+//     timer.textcontent = "Time Left:" + time + "seconds.";
+//     if (time < 0) {
+//         clearInterval(interval);
+//         alert("You're out of time!")
+//         gameOver();
+//     }
+// }
 
-function timer(){
-    time=50;
-    interval = setInterval(function() {
-        time--;
-        timeDisplay()
-    }, 1000);
-}
+// function timer(){
+//     time=50;
+//     interval = setInterval(function() {
+//         time--;
+//         timeDisplay()
+//     }, 1000);
+// }
 
-function start(event){
-    event.stopPropgation();
-    gameTimer();
-    Question = -2;
-    start.style.display = "none";
-    questions.textContent = "";
-    choices.textContent = "";
-    nextQuestion();
-}
+// function start(event){
+//     event.stopPropgation();
+//     gameTimer();
+//     Question = -2;
+//     start.style.display = "none";
+//     questions.textContent = "";
+//     choices.textContent = "";
+//     nextQuestion();
+// }
 
+$(document).ready(function() {
+    $("#startBtn").click(function(){
+        alert("I have been clicked");
+    })
+});
