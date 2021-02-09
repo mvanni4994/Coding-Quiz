@@ -70,7 +70,67 @@ startQuiz()
     }
 });
 
-// with tutor work on timer/ work on file directory when linkin highscores 
+let startingMinutes = 1;
+let time = startingMinutes * 60;
+let timerEl = document.getElementById("timer");
+
+setInterval (startCountdown, 1000);
+
+
+function startCountdown(){
+let minutes = Math.floor(time / 60)
+let seconds = time % 60
+    if (time <= 0){
+      clearInterval(counter);
+      return; }
+
+// ternirary? operator //
+
+seconds = seconds<10 ? "0" + seconds : seconds
+    timerEl.innerHTML = `${minutes}: ${seconds}`;
+    time--;
+    };
+
+
+/* have timer stop at 0:00 inside of counter function
+make another conditional function. If timer = 0, then stop function will 
+- google:"clear interval"
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+// function startTimer(duration,display){
+// var timer = duration, seconds;
+// setInterval(function(){
+//     minutes = parseInt(timer/ 60, 10);
+//     seconds = parseInt(timer % 60, 10);
+//     minutes = minutes < 10 ? "0" + minutes : minutes;
+//     seconds = seconds < 10 ? "0" + seconds : seconds;
+
+//     display.textContent = minutes + ":" + seconds;
+
+//     if (--timer < 0) {
+//         timer = duration;
+//     }
+// }, 1000);
+// }
+
+// window.onload = function () {
+// var fiveMinutes = 60 * 5,
+//     display = document.querySelector('#time');
+// startTimer(fiveMinutes, display);
+// };
+
+// with tutor work on timer/ work on file directory when linking highscores 
 // timer
 // highscore generator (not needed)
 
