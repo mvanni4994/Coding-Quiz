@@ -56,9 +56,11 @@ startQuiz()
             console.log(e.target.innerText)
             if(e.target.innerText == questions[questionPosition].answer){
                 console.log("correct")
-            
+                incrimentScore(CORRECT_POINTS)
+
             } else{
                 console.log("wrong")
+                decrimentScore(INCORRECT_POINTS)
             }
             if(questions.length-1 > questionPosition){
                 questionPosition++
@@ -67,15 +69,34 @@ startQuiz()
             }
         }
         )
+        setInterval (startCountdown, 1000);
     }
 });
+
+let scoreText = document.getElementById("score");
+let score = 0
+let CORRECT_POINTS = 10
+let INCORRECT_POINTS = 10
 
 let startingMinutes = 1;
 let time = startingMinutes * 60;
 let timerEl = document.getElementById("timer");
 
-setInterval (startCountdown, 1000);
+// setInterval (startCountdown, 1000);
+// function incrimentScore(num){}
+incrimentScore = num => {
+score += num;
+scoreText.innerText = "Score:" + score;
+$("#score").addClass("green");
+$("#score").removeClass("red");
+}
 
+decrimentScore = num => {
+    score -= num;
+    scoreText.innerText = "Score:" + score;
+    $("#score").addClass("red");
+    $("#score").removeClass("green");
+}
 
 function startCountdown(){
 let minutes = Math.floor(time / 60)
@@ -96,6 +117,7 @@ seconds = seconds<10 ? "0" + seconds : seconds
 make another conditional function. If timer = 0, then stop function will 
 - google:"clear interval"
 */
+
 
 
 
