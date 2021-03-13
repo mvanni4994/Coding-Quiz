@@ -65,7 +65,7 @@ startQuiz()
             if(questions.length-1 > questionPosition){
                 questionPosition++
                 startQuiz()
-            } else{ window.location.replace("file:///C:/Users/mvann/OneDrive/Desktop/Coding/HW/Coding-Quiz/highscores.html");
+            } else{alert("You scored " + score + " points. Try again?");
             }
         }
         )
@@ -101,9 +101,12 @@ decrimentScore = num => {
 function startCountdown(){
 let minutes = Math.floor(time / 60)
 let seconds = time % 60
-    if (time <= 0){
+    if (time < 0){
+      confirm("YOU RAN OUT OF TIME ARE YOU KIDDING ME IT'S 5 QUESTIONS. Anyways, try again?");
+      if(confirm){window.location.replace("/index.html")}
+      else{alert("alt f4 please")}
       clearInterval(counter);
-      return; }
+    }
 
 // ternirary? operator //
 
@@ -111,7 +114,6 @@ seconds = seconds<10 ? "0" + seconds : seconds
     timerEl.innerHTML = `${minutes}: ${seconds}`;
     time--;
     };
-
 
 /* have timer stop at 0:00 inside of counter function
 make another conditional function. If timer = 0, then stop function will 
