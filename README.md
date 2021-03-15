@@ -14,3 +14,5 @@ Installation
 Use VSCode to install.
 
 Link to site:
+
+https://mvanni4994.github.io/Coding-Quiz/
